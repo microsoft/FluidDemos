@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+$navbar-breakpoint: 0px;
+
+@import '~bulma/bulma';
+
+body {
+    max-width: fit-content;
+
+    margin: auto;
+}
