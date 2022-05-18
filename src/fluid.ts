@@ -28,6 +28,7 @@ const connectionConfig: AzureConnectionConfig = useAzure
     ? {
           tenantId: process.env.AZURE_TENANT_ID ?? LOCAL_MODE_TENANT_ID,
           tokenProvider: new AzureFunctionTokenProvider(
+              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
               process.env.AZURE_FUNCTION_TOKEN_PROVIDER_URL!,
               azureUser
           ),

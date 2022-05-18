@@ -6,11 +6,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const mode = process.env.FLUID_CLIENT === 'azure' ? 'production' : 'development';
+
 module.exports = {
     // Basic configuration
     entry: './src/index.tsx',
     // Necessary in order to use source maps and debug directly TypeScript files
     devtool: 'source-map',
+    mode: mode,
     module: {
         rules: [
             // Necessary in order to use TypeScript
@@ -22,7 +25,6 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [
-                    // { loader: 'style-loader' },
                     MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader'
@@ -42,6 +44,9 @@ module.exports = {
         // Alway keep '.js' even though you don't use it.
         // https://github.com/webpack/webpack-dev-server/issues/720#issuecomment-268470989
         extensions: ['.tsx', '.ts', '.js'],
+        fallback: {
+            buffer: require.resolve("buffer/") // note: the trailing slash is important!
+        },
     },
     output: {
         filename: 'bundle.js',
@@ -67,15 +72,20 @@ module.exports = {
         // Do not accumulate files in ./dist
         new CleanWebpackPlugin(),
         // Copy assets to serve them
-        new CopyPlugin([{ from: 'assets', to: 'assets' }]),
+        new CopyPlugin({
+            patterns: [
+                { from: 'assets', to: 'assets' },
+            ]
+        }),
     ],
     devServer: {
-        // webpack-dev-server configuration
-        contentBase: path.join(__dirname, 'dist'),
-        // keep port in sync with VS Code launch.json
-        port: 3000,
-        // Hot-reloading, the sole reason to use webpack here <3
+        devMiddleware: {
+            writeToDisk: true,
+        },
         hot: true,
-        writeToDisk: true,
+        port: 3000,
+        static: {
+            directory: path.resolve(__dirname, 'dist'),
+        },
     },
 }
