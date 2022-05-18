@@ -3,23 +3,14 @@ import * as PIXI from 'pixi.js';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { loadFluidData } from './fluid';
-import {
-    Color,
-    getNextColor,
-    Shape,
-} from './util';
-import {
-    Pixi2Fluid,
-    FluidDisplayObject,
-    Fluid2Pixi
-} from './wrappers';
+import { Color, getNextColor, Shape } from './util';
+import { Pixi2Fluid, FluidDisplayObject, Fluid2Pixi } from './wrappers';
 import * as UX from './ux';
 import { Guid } from 'guid-typescript';
 
 import './styles.scss';
 
 async function main() {
-
     // create the root element for React
     const root = document.createElement('div');
     root.id = 'root';
@@ -93,7 +84,7 @@ async function main() {
 
     // get the Fluid shapes that already exist
     fluidMap.forEach((fdo: FluidDisplayObject, id: string) => {
-         // add the Fluid shapes to the local shape data
+        // add the Fluid shapes to the local shape data
         addNewLocalShape(fdo.shape, fdo.color, fdo.id, fdo.x, fdo.y);
     });
 

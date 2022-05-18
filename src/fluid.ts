@@ -9,11 +9,7 @@ import {
     generateTestUser,
     InsecureTokenProvider,
 } from '@fluidframework/test-client-utils';
-import {
-    ContainerSchema,
-    IFluidContainer,
-    SharedMap,
-} from 'fluid-framework';
+import { ContainerSchema, IFluidContainer, SharedMap } from 'fluid-framework';
 
 // Define the server (Azure or local) we will be using
 const useAzure = process.env.FLUID_CLIENT === 'azure';
