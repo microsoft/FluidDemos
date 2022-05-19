@@ -88,4 +88,13 @@ module.exports = {
             directory: path.resolve(__dirname, 'dist'),
         },
     },
+    performance: {
+        hints: "warning", // enum
+        maxAssetSize: 6000000, // int (in bytes),
+        maxEntrypointSize: 6000000, // int (in bytes)
+        assetFilter: function(assetFilename) {
+          // Function predicate that provides asset filenames
+          return assetFilename.endsWith('.css') || assetFilename.endsWith('.js');
+        }
+      },
 }
