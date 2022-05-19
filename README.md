@@ -7,7 +7,23 @@ around the board. Everyone can move pieces.
 
 ## Building and running
 
-You can use the following npm scripts (`npm run SCRIPT-NAME`) to build and run the app. 
+This app will only work when connected to a Fluid relay service. For isolated local development, you can run a local instance of the azure service by running:
+
+npx @fluidframework/azure-local-service@latest
+
+Running npm run dev will automatically connect to that local service.
+
+If you want to run your local code against Fluid relay service in Azure, go to (https://aka.ms/fluidrelayservice) to set up the service. Use the information from your Azure Fluid Relay instance to create a .env file with the following config:
+
+AZURE_TENANT_ID=<id>
+AZURE_ORDERER=<url>
+AZURE_STORAGE=<url>
+AZURE_FUNCTION_TOKEN_PROVIDER_URL=<url>
+FLUID_CLIENT=azure
+
+Place the .env file at the root of your project. It is not recommended that you include your .env in your source code.
+
+You can use the following npm scripts (`npm run SCRIPT-NAME`) to build and run the app.
 
 <!-- AUTO-GENERATED-CONTENT:START (SCRIPTS) -->
 | Script | Description |
