@@ -89,7 +89,7 @@ module.exports = {
         },
     },
     performance: {
-        hints: "warning", // enum
+        hints: false, // enum
         maxAssetSize: 6000000, // int (in bytes),
         maxEntrypointSize: 6000000, // int (in bytes)
         assetFilter: function(assetFilename) {
