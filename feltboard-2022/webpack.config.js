@@ -45,7 +45,8 @@ module.exports = {
         // https://github.com/webpack/webpack-dev-server/issues/720#issuecomment-268470989
         extensions: ['.tsx', '.ts', '.js'],
         fallback: {
-            buffer: require.resolve("buffer/") // note: the trailing slash is important!
+            assert: require.resolve("assert/"), // note: the trailing slash is important!
+            buffer: require.resolve("buffer/"), // note: the trailing slash is important!
         },
     },
     output: {
