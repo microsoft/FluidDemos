@@ -2,7 +2,8 @@ import {
     AzureFunctionTokenProvider,
     AzureClient,
 } from '@fluidframework/azure-client';
-import type {     AzureContainerServices,
+import type {
+    AzureContainerServices,
     AzureClientProps,
     AzureRemoteConnectionConfig,
     AzureLocalConnectionConfig,
@@ -34,10 +35,10 @@ const serviceConfig: AzureClientProps = useAzure
               tokenProvider: new AzureFunctionTokenProvider(
                   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                   process.env.AZURE_FUNCTION_TOKEN_PROVIDER_URL!,
-                  azureUser,
-                  ),
-                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                tenantId: process.env.AZURE_TENANT_ID!,
+                  azureUser
+              ),
+              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+              tenantId: process.env.AZURE_TENANT_ID!,
               // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
               endpoint: process.env.AZURE_ENDPOINT!,
           } as AzureRemoteConnectionConfig,
@@ -48,7 +49,7 @@ const serviceConfig: AzureClientProps = useAzure
               tokenProvider: new InsecureTokenProvider('VALUE_NOT_USED', user),
               endpoint: 'http://localhost:7070',
           } as AzureLocalConnectionConfig,
-      } ;
+      };
 
 const client = new AzureClient(serviceConfig);
 
