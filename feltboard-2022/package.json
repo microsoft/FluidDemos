@@ -15,14 +15,15 @@
         "start": "npm run dev"
     },
     "dependencies": {
-        "@fluidframework/azure-client": "~0.58.2002",
-        "@fluidframework/test-client-utils": "~0.58.2002",
+        "@fluidframework/azure-client": "~1.0.1",
+        "@fluidframework/test-client-utils": "~1.2.2",
         "@mdi/font": "^6.7.96",
         "@mdi/js": "^6.7.96",
         "@mdi/react": "^1.6.0",
         "@types/react": "^17.0.45",
         "@types/react-dom": "^17.0.17",
-        "fluid-framework": "~0.58.2002",
+        "assert": "^2.0.0",
+        "fluid-framework": "~1.2.2",
         "guid-typescript": "^1.0.9",
         "pixi.js": "^5.3.12",
         "react": "^17.0.2",
