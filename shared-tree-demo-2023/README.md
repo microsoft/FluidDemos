@@ -27,6 +27,28 @@ This app is built using React. It uses a custom hook to fetch the data from the 
 
 ## Building and Running
 
+This app will only work when connected to a Fluid relay service. For isolated local development, you can run a local instance of the azure service by running:
+
+npx @fluidframework/azure-local-service@latest
+
+Running npm run dev will automatically connect to that local service.
+
+If you want to run your local code against Fluid relay service in Azure, go to (https://aka.ms/fluidrelayservice) to set up the service. Use the information from your Azure Fluid Relay instance to create a .env file with the following config:
+
+AZURE_TENANT_ID={id from Azure}
+
+AZURE_ORDERER={url from Azure}
+
+AZURE_STORAGE={url from Azure}
+
+AZURE_FUNCTION_TOKEN_PROVIDER_URL={url of token provider}
+
+FLUID_CLIENT=azure
+
+The first three URLs are from the Azure Fluid Relay settings. The token provider URL is going to depend on your choice for managing tokens. We used the following guide to set up a simple anonymous token provider for the demo: How to: Write a TokenProvider with an Azure Function.
+
+Place the .env file at the root of your project. It is not recommended that you include your .env in your source code.
+
 You can use the following npm scripts (`npm run SCRIPT-NAME`) to build and run the app. 
 
 <!-- AUTO-GENERATED-CONTENT:START (SCRIPTS) -->
