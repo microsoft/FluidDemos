@@ -15,12 +15,12 @@
         "start": "npm run dev"
     },
     "dependencies": {
-        "@fluidframework/telemetry-utils": ">=2.0.0-internal.4.3.1",
-        "@fluid-experimental/data-objects": ">=2.0.0-internal.4.3.1",
-        "@fluid-experimental/tree-react-api": ">=2.0.0-internal.4.3.1",
-        "@fluid-experimental/tree2": ">=2.0.0-internal.4.3.1",
-        "@fluidframework/azure-client": ">=2.0.0-internal.4.3.1",
-        "@fluidframework/test-client-utils": ">=2.0.0-internal.4.3.1",
+        "@fluidframework/telemetry-utils": ">=2.0.0-internal.5.0.1",
+        "@fluid-experimental/data-objects": ">=2.0.0-internal.5.0.1",
+        "@fluid-experimental/tree-react-api": ">=2.0.0-internal.5.0.1",
+        "@fluid-experimental/tree2": ">=2.0.0-internal.5.0.1",
+        "@fluidframework/azure-client": ">=2.0.0-internal.5.0.1",
+        "@fluidframework/test-client-utils": ">=2.0.0-internal.5.0.1",
         "@mdi/font": "^6.9.96",
         "@mdi/js": "^6.9.96",
         "@mdi/react": "^1.6.1",
@@ -28,7 +28,7 @@
         "@types/react-dom": "^17.0.17",
         "axios": "^1.4.0",
         "dotenv": "^16.0.2",
-        "fluid-framework": ">=2.0.0-internal.4.3.1",
+        "fluid-framework": ">=2.0.0-internal.5.0.1",
         "guid-typescript": "^1.0.9",
         "hashids": "^2.2.10",
         "randomcolor": "^0.6.2",
@@ -39,7 +39,7 @@
         "react-transition-state": "^2.1.0"
     },
     "devDependencies": {
-        "@fluid-experimental/devtools": ">=2.0.0-internal.4.3.1",
+        "@fluid-experimental/devtools": ">=2.0.0-internal.5.0.1",
         "@types/debug": "^4.1.7",
         "@types/node": "^17.0.45",
         "@types/randomcolor": "^0.5.6",
